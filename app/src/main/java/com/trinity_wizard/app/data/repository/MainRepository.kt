@@ -5,6 +5,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.trinity_wizard.app.data.model.Contact
 import com.trinity_wizard.app.data.util.readDataFromJson
+import com.trinity_wizard.app.data.util.writeData
 import javax.inject.Inject
 
 /**
@@ -19,5 +20,9 @@ class MainRepository @Inject constructor(
         val jsonString = readDataFromJson(context, "data.json")
         val listOfContact = object : TypeToken<List<Contact>>() {}.type
         return Gson().fromJson(jsonString, listOfContact)
+    }
+
+    fun updateContact(contact: Contact): Int {
+        return writeData(context,contact)
     }
 }

@@ -15,9 +15,15 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(private val repository: MainRepository) : ViewModel() {
     val contactsLiveData by lazy { MutableLiveData<List<Contact>>() }
-
+    val updateContactsLiveData by lazy { MutableLiveData<Boolean>() }
     fun getContacts(){
         val data = repository.callContactData()
         contactsLiveData.postValue(data)
+    }
+
+    fun updateContact(id:String, firstName:String, lastName:String, email:String, dob:String){
+        val contact = Contact(id, firstName, lastName, email, dob)
+        if(repository.updateContact(contact) == 1) updateContactsLiveData.postValue(true)
+        else updateContactsLiveData.postValue(false)
     }
 }
