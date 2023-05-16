@@ -1,0 +1,13 @@
+<resources>
+    <dimen name="spacing_xxs">4dp</dimen>
+    <dimen name="spacing_xs">8dp</dimen>
+    <dimen name="spacing_s">16dp</dimen>
+    <dimen name="spacing_m">20dp</dimen>
+    <dimen name="spacing_l">32dp</dimen>
+    <dimen name="material_default_4dp">4dp</dimen>
+    <dimen name="material_default_8dp">8dp</dimen>
+    <dimen name="material_default_12dp">12dp</dimen>
+    <dimen name="material_default_16dp">16dp</dimen>
+    <dimen name="material_default_20dp">20dp</dimen>
+    <dimen name="material_default_24dp">24dp</dimen>
+</resources>
